@@ -1,4 +1,5 @@
 EventWebsite::Application.routes.draw do
+  get "major_pages/home"
   resources :events
 
   resources :users
