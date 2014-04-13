@@ -2,40 +2,29 @@ require 'spec_helper'
 
 describe "Major Pages" do
   
+  subject { page }
+  
   describe "Home page" do
-    it "should have the content 'Welcome to the Event Website!'" do
-      visit root_path
-      expect(page).to have_content('Welcome to the Event Website!')
-    end
-    
-    it "should have the title 'Home'" do
-      visit root_path
-      expect(page).to have_title("Event Website | Home")
-    end
+    before { visit root_path }
+   
+    it { should have_content('Welcome to the Event Website!') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('| Home') }
+
   end
   
   describe "About page" do
-    it "should have the content 'About Us' " do
-      visit about_path
-      expect(page).to have_content('About Us')
-    end
-    
-    it "should have the title 'About Us'" do
-      visit about_path
-      expect(page).to have_title("Event Website | About Us")
-    end
+    before { visit about_path }
+
+    it { should have_content('About Us') }
+    it { should have_title(full_title('About Us')) }
   end
-  
+
   describe "Contact page" do
-    it "should have the content 'Contact' " do
-      visit contact_path
-      expect(page).to have_content('Contact')
-    end
-    
-    it "should have the title 'Contact'" do
-      visit contact_path
-      expect(page).to have_title("Event Website | Contact")
-    end
+    before { visit contact_path }
+
+    it { should have_content('Contact') }
+    it { should have_title(full_title('Contact')) }
   end
   
 end
