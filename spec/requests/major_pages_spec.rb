@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "Major Pages" do
+  
   describe "Home page" do
     it "should have the content 'Test Content'" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
@@ -13,4 +14,12 @@ describe "Major Pages" do
       expect(page).to have_title("Event Website | Home")
     end
   end
+  
+  describe "About page" do
+    it "should have the content 'About Us' " do
+      visit '/major_pages/about'
+      expect(page).to have_content('About Us')
+    end
+  end
+  
 end
