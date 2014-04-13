@@ -1,7 +1,7 @@
 EventWebsite::Application.routes.draw do
-  get "major_pages/home"
-  get "major_pages/about"
-  get "major_pages/contact"
+  root 'major_pages#home'
+  match '/about', to: 'major_pages#about', via: 'get'
+  match '/contact', to: 'major_pages#contact', via: 'get'
   
   resources :users
   resources :events
