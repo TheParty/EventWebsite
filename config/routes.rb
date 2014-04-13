@@ -1,7 +1,11 @@
 EventWebsite::Application.routes.draw do
+  get "users/new"
+  
   root 'major_pages#home'
   match '/about', to: 'major_pages#about', via: 'get'
   match '/contact', to: 'major_pages#contact', via: 'get'
+  
+  match '/signup', to: 'users#new', via: 'get'
   
   resources :users
   resources :events
