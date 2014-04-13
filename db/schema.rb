@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404052222) do
+ActiveRecord::Schema.define(version: 20140413092027) do
 
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "location"
     t.string   "time"
     t.string   "description"
-    t.integer  "host"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

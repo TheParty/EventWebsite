@@ -1,8 +1,9 @@
 EventWebsite::Application.routes.draw do
   get "major_pages/home"
-  resources :events
-
+  
   resources :users
+  resources :events
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
