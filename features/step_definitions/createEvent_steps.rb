@@ -1,15 +1,15 @@
-Given(/^I am in the Edit Event page$/) do
+Given(/^I am on the New Event Page$/) do
+  visit '/events/new'
+end
+
+When(/^I fill out the form$/) do
   pending # express the regexp above with the code you wish you had
 end
 
-When(/^I fill in the create event form$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I click the Create Event Button$/) do
+  click_button "Create Event"
 end
 
-Then(/^I should be able to invite other users$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^my event should be listed in the events list$/) do
+Then(/^I should be sent to the specific event's page$/) do
   pending # express the regexp above with the code you wish you had
 end
