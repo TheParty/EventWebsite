@@ -6,6 +6,7 @@ EventWebsite::Application.routes.draw do
   match '/contact', to: 'major_pages#contact', via: 'get'
   
   match '/signup', to: 'users#new', via: 'get'
+  match '/newevent', to: 'events#new', via: 'get'
   
   resources :users
   resources :events
