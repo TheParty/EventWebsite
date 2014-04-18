@@ -1,5 +1,6 @@
 EventWebsite::Application.routes.draw do
-  get "users/new"
+  resources :users
+  resources :events
   
   root 'major_pages#home'
   match '/about', to: 'major_pages#about', via: 'get'
@@ -8,8 +9,7 @@ EventWebsite::Application.routes.draw do
   match '/signup', to: 'users#new', via: 'get'
   match '/newevent', to: 'events#new', via: 'get'
   
-  resources :users
-  resources :events
+  
   
 
   # The priority is based upon order of creation: first created -> highest priority.
