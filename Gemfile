@@ -17,6 +17,7 @@ group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 # Use SCSS for stylesheets
