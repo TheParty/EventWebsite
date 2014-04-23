@@ -1,18 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<% provide(:title, @user.username) %>
+
+<h1>
+	<%= @user.username %> 
+</h1>
+
+
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>
+	 		  <%= gravatar_for @user %>
+		  	</h1>
+		</section>
+	</aside>
+</div>
+
 
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
 </p>
 
 <p>
@@ -26,12 +34,12 @@
 </p>
 
 <p>
-  <strong>Pastevents:</strong>
+  <strong>Past Events:</strong>
   <%= @user.pastEvents %>
 </p>
 
 <p>
-  <strong>Futureevents:</strong>
+  <strong>Future Events:</strong>
   <%= @user.futureEvents %>
 </p>
 
