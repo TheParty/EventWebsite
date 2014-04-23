@@ -27,6 +27,12 @@
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+	<%= form_tag root_path, :method => 'get' do %>
+	  <p>
+	   <%= text_field_tag :search_text, params[:search_text] %>
+	   <%= submit_tag 'Search' %>
+	  </p>
+	<% end %>
   </tbody>
 </table>
 
