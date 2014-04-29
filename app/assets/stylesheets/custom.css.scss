@@ -46,6 +46,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  
 }
 
 h2 {
@@ -138,6 +139,7 @@ aside {
       letter-spacing: -1px;
       margin-bottom: 3px;
       margin-top: 0px;
+	  
     }
   }
 }
@@ -147,7 +149,13 @@ aside {
   margin-right: 10px;
 }
 
+.center.hero-unit{
+background-image: url("event.jpeg");
+.btn.btn-large.btn-primary{
+color: black;
 
+}
+}
 
 
 
