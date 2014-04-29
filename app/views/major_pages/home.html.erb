@@ -1,3 +1,16 @@
+	
+
+	
+	
+	<%= form_tag events_path, :method => 'get' do %>
+	<div class="search_form">
+	   <%= text_field_tag :search, params[:search] %>
+	  <div id="search_btn">
+	   <%= submit_tag 'Search' %>
+	 
+	  </div>
+	<% end %>
+</div>
 	<div class="center hero-unit">
 		<h1>Welcome to the Event Website!</h1>
 		<!--<h2>This is the home page for the Event Website. Welcome home. </h2>-->
