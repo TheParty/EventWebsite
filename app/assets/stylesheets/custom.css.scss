@@ -160,7 +160,6 @@ color: black;
 width:500px;
 height:25px;
 	margin:0 auto;
-text-align:right;
 
 
 }
@@ -168,12 +167,21 @@ text-align:right;
 width:370px;
 height:25px;
 float: left;
+
+ 
+display:inline;
 }
 #search_btn{
    padding:6px 30px 6px 5px;
 height:25px;
-   
+   display:inline;
    float: right;
   
+   }
+#table{
+   
+   display:inline;
+   text-inline:center;
+   height:100px;
    }
   
