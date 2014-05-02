@@ -1,6 +1,28 @@
-<h1>Editing event</h1>
+<% provide(:title, "Edit event") %>
+<h1>Update your Event</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@event) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+
+      <%= f.label :time %>
+      <%= f.text_field :time %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+
+      <%= f.submit "Update Event", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
+
 
 <%= link_to 'Show', @event %> |
 <%= link_to 'Back', events_path %>

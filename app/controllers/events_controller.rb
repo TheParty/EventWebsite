@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:new, :edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -30,6 +31,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    
 
     respond_to do |format|
       if @event.save
@@ -76,4 +78,13 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:name, :location, :time, :description, :user_id)
     end
+    
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
+    end
+    
+    
 end
