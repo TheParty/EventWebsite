@@ -1,4 +1,7 @@
 class Event < ActiveRecord::Base
+  
+  DISQUS_SHORTNAME = Rails.env == "beatevents".freeze
+  
   belongs_to :user
   def self.search(search)
     if search

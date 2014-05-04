@@ -12,4 +12,17 @@ FactoryGirl.define do
     
   end
   
+  factory :micropost do
+    content "Lorem ipsum"
+    user
+  end
+  
+  factory :event do
+    sequence(:name) { |n| "Event #{n}"}
+    location "Boulder, CO"
+    time "12pm"
+    description "TEST DESCRIPTION"
+    user
+  end
+  
 end
