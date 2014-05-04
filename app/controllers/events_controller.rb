@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user, only: [:new, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update]
 
   # GET /events
   # GET /events.json
@@ -31,7 +32,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    
+    @event.user_id = current_user.id
 
     respond_to do |format|
       if @event.save
@@ -86,5 +87,10 @@ class EventsController < ApplicationController
       end
     end
     
+    def correct_user
+      unless ( current_user.id == @event.user_id )
+        redirect_to events_path, notice: "Only the creator may edit their event."
+      end
+    end
     
 end
