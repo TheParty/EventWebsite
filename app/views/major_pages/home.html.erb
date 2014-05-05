@@ -13,8 +13,11 @@
 
 	<div class="center hero-unit">
 		
-		<!--<h2>This is the home page for the Event Website. Welcome home. </h2>-->
 	</div>
-		<%= link_to "Sign up now!", signup_path, class: "btn btn-large 						btn-primary" %>
 	
+	<% if signed_in? %>
+		<br>
+	<% else %>
+		<%= link_to "Sign up now!", signup_path, class: "btn btn-large 						btn-primary" %>
+	<% end %>
 	

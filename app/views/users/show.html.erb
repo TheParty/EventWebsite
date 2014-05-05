@@ -28,16 +28,20 @@
   <strong>Biography:</strong>
   <%= @user.biography %>
 </p>
-
-<p>
-  <strong>Past Events:</strong>
-  <%= @user.pastEvents %>
-</p>
-
-<p>
-  <strong>Future Events:</strong>
-  <%= @user.futureEvents %>
-</p>
-
+<br>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<br>
+
+<p>
+  <% if @user.events.any? %>
+    <h2>Events (<%= @user.events.count %>)</h2>
+    <ol class="events">
+      <%= render @events %>
+    </ol>
+    <%= will_paginate @events%>
+  <% end %>
+</p>
+
+
+
